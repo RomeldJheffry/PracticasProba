@@ -1,0 +1,181 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{makeidx}
+\usepackage{graphicx}
+
+\usepackage{wasysym}
+\begin{document}
+\begin{titlepage}
+\end{titlepage}
+\begin{center}
+\vspace*{\baselineskip}
+
+{
+\bf\fontsize{19}{0}{\selectfont{UNIVERSIDAD NACIONAL  SAN CRISTOBAL DE HUAMANGA}}\\[0.5cm]
+\fontsize{11}{0}{FACULTAD DE INGENIERÍA DE MINAS, GEOLOGÍA Y CIVIL}
+}
+
+\vspace*{0.5\baselineskip}
+
+
+{
+\bf\fontsize{11}{0}{\selectfont{ESCUELA DE CIENCIAS FISICO Y MATEMATICAS}}
+}
+
+
+\vspace*{\baselineskip}
+\includegraphics[width=4.5cm,height=6.5cm]{../unsch.jpg} 
+\vspace*{3\baselineskip}
+
+{
+\bf\fontsize{13}{0}{\selectfont{Cálculo de Probabilidades}}
+}
+
+\vspace*{3\baselineskip}
+\end{center}
+
+{
+\vfill\bf\fontsize{14}{0}{\selectfont{Docente: Jackson M'coy Romero Plasencia}}\\[0.01cm]
+\vfill\bf\fontsize{14}{0}{\selectfont{Alumno: Romeld Jheffry	Vilca Torres}}
+}
+\begin{center}
+
+
+{Ayacucho,Perú}\\ 
+ 2019
+
+\thispagestyle{empty}
+\end{center}
+
+\title{\textbf{Práctica 03}}
+\date{}
+
+\maketitle
+\begin{enumerate}
+
+\item Sean A,B y C eventos aleatorios en un espacio de probabilidad $(\Omega, A , P)$.Muestre que
+\begin{enumerate}[a)]
+\item 
+\begin{enumerate}[-]
+\item
+$P(A \cup B)= P(A)+P(B)-P(A \cap B)$    y \\
+\item $P(A \cup B\cup C)=P(A)+P(B)+P(C)-P(A \cap B)-P(A\cap C)-P(B\cap C)+P(A\cap B\cap C)$ \\[0.2cm]
+Demostración del primero\\
+$B=(A\cap B)\cup (A^c \cap B)$, por aditiva finita\\
+$P(B)=P(A\cap B)+ P(A^c \cap B)$.......(i)\\
+$A \cup B = A \cup (B\cap A^c)$, también por aditividad finita\\
+$P(A \cup B )= P(A) + P(B\cap A^c)$.......(ii)\\
+Haciendo (ii)-(i) tenemos\\
+$P(A \cup B)= P(A)+P(B)-P(A \cap B)$\\[0.2cm]
+Demostración del segundo\\
+$P(A \cup B\cup C)= P(A \cup K)= P(A)+P(K)-P(A\cap K)$, por lo anterior como $K=B\cup C$\\
+Por tanto\\
+$P(A \cup B\cup C)=P(A)+P(B \cup C)-P(A\cap (B\cup C))= P(A)+P(B)+P(C)-P(B\cap C)-P((A\cap B)\cup (A \cap C	))$\\
+tenemos que $P((A\cap B)\cup (A \cap C	))= P(A\cap C)+P(A\cap C)-P((A\cap B)\cap(A\cap C))$\\
+$\Rightarrow P(A \cup B\cup C)=P(A)+P(B)+P(C)-P(A \cap B)-P(A\cap C)-P(B\cap C)+P(A\cap B\cap C)$
+\end{enumerate}
+ 
+\item Enuncie una generalización del item(a) para el caso de la unción de n eventos aleatorios\\[0.2cm]
+Sean n eventos $A_1,A_2,...,A_n$\\
+$P(\displaystyle\bigcup_{i=1}^{n}A_i)= \displaystyle \sum_{i=1}^{n}P(A_i)-\displaystyle \sum_{i<j}P(A_i\cap A_j)+\displaystyle \sum_{i<j<k}P(A_i\cap A_j\cap A_k)-\displaystyle \sum_{i<j<k<l}P(A_i\cap A_j\cap A_k\cap A_l)+...+(-1)^{n+1}P(\displaystyle\bigcap_{i=1}^{n}A_i)   $
+
+\item Pruebe las siguientes desigualdades de Bonferron\\[0.2cm]
+\begin{enumerate}[i)]
+\item $\displaystyle \sum_{i=1}^{n}P(A_i)- \displaystyle \sum_{1\leqslant i<j \leqslant n}P(A_i\cap A_j)\leqslant P(\displaystyle\bigcup_{i=1}^{n}A_i)\leqslant \displaystyle \sum_{i=1}^{n}P(A_i)-\displaystyle \sum_{1\leqslant i<j \leqslant n}P(A_i\cap A_j)+ \displaystyle \sum_{1\leqslant i<j<k \leqslant n}P(A_i\cap A_j \cap A_k)$\\
+Sabemos que\\
+$P(\displaystyle\bigcup_{i=1}^{n}A_i)=\displaystyle \sum_{i=1}^{n}P(A_i)-\displaystyle \sum_{1\leqslant i<j \leqslant n}P(A_i\cap A_j)+\displaystyle \sum_{1\leqslant i<j<k \leqslant n}P(A_i\cap A_j \cap A_k)-\displaystyle \sum_{1\leqslant i<j<k<l \leqslant n}P(A_i\cap A_j \cap A_k\cap A_l)+...+(-1)^{n+1} P(\displaystyle\bigcap_{i=1}^{n}A_i)$\\
+Vemos que \\
+$\displaystyle \sum_{1\leqslant i<j<k \leqslant n}P(A_i\cap A_j \cap A_k)-\displaystyle \sum_{1\leqslant i<j<k<l \leqslant n}P(A_i\cap A_j \cap A_k\cap A_l)+...+(-1)^{n+1} P(\displaystyle\bigcap_{i=1}^{n}A_i)\geqslant 0..........(*)$\\
+y también tenemos que\\
+$-\displaystyle \sum_{1\leqslant i<j<k<l \leqslant n}P(A_i\cap A_j \cap A_k\cap A_l)+...+(-1)^{n+1} P(\displaystyle\bigcap_{i=1}^{n}A_i)\leqslant \displaystyle \sum_{1\leqslant i<j<k \leqslant n}P(A_i\cap A_j \cap A_k)................(**) $\\
+Note que\\
+$P(\displaystyle\bigcup_{i=1}^{n}A_i)=\displaystyle \sum_{i=1}^{n}P(A_i)-\displaystyle \sum_{1\leqslant i<j \leqslant n}P(A_i\cap A_j)+\displaystyle \sum_{1\leqslant i<j<k \leqslant n}P(A_i\cap A_j \cap A_k)$\\
+Se sabe\\
+$\displaystyle \sum_{1\leqslant i<j<k \leqslant n}
+P(A_i\cap A_j \cap A_k)\geqslant 0$\\
+Se comprueba (**)\\
+$\displaystyle \sum_{1\leqslant i<j<k \leqslant n}P(\cup(A_i\cap A_j \cap A_k))=\displaystyle \sum_{1\leqslant i<j<k \leqslant n}P(A_i\cap A_j \cap A_k)-\displaystyle \sum_{1\leqslant i<j<k<l \leqslant n}P(A_i\cap A_j \cap A_k\cap A_l)+...+(-1)^{n+1} P(\displaystyle\bigcap_{i=1}^{n}A_i)\geqslant 0$\\
+$\Rightarrow\displaystyle \sum_{1\leqslant i<j<k \leqslant n}P(A_i\cap A_j \cap A_k)\geqslant - \displaystyle \sum_{1\leqslant i<j<k<l \leqslant n}P(A_i\cap A_j \cap A_k\cap A_l)+...+(-1)^{n+1} P(\displaystyle\bigcap_{i=1}^{n}A_i$\\
+Entonces probamos (**)\\[0.2cm]
+
+\item Si k es impar, k$\leqslant n$, entonces \\
+ $P(\displaystyle\bigcup_{i=1}^{n}A_i)\leqslant \displaystyle\sum_{i=1}^{n}P(A_i)-\displaystyle\sum_{1\leqslant {i_1}<{i_2}\leqslant n}P(A_{i_1}\cap A_{i_2})+ (-1)^{k-1}\displaystyle\sum_{1\leqslant i_1 <...<i_k\leqslant n}P(A_i\cap ...\cap A_{i_k})$\\
+ si k es par $k\leqslant n $, vale$ \geqslant$ en esta ultima desigualdad \\
+$P(\displaystyle\bigcup_{i=1}^{n}A_i)= \displaystyle\sum_{i=1}^{n}P(A_i)-\displaystyle\sum_{1\leqslant {i_1}<{i_2}\leqslant n}P(A_{i_1}\cap A_{i_2})+ (-1)^{k-1}\displaystyle\sum_{1\leqslant i_1 <...<i_k\leqslant n}P(A_i\cap ...\cap A_{i_k})+(-1)^k\displaystyle \sum_{i\leqslant i_1<...<i_k<i_{k+1}}P(\cup(A_{i1}\cap ...\cap A_{ik}\cap A_{ik+1}))$\\
+Si k es par tenemos que la ultima parte de esta sumatoria es positivo y esta ocurre $\leqslant$ cuando retiramos esta ultima parte . Si k es impar tenemos negativo o desigualdades.
+\end{enumerate}
+\end{enumerate}
+\item Sea$(\Omega , A,P)$ un espacio de probabilidad y suponga que todos los siguientes conjuntos pertenecen a $A$. Pruebe:\\
+\begin{enumerate}
+\item Si los $A_n$ son disjuntos y $P(B|A_n)=P(C|A_n)\forall_n$, entonces \\
+$P(B|\cup A_n)=P(C|\cup A_n)$\\
+Probando\\
+Si son disjuntos y $P(B|A_n)=P(C|A_n)\forall_n$\\
+$\Rightarrow P(B|\cup A_n)=P(C|\cup A_n)$\\
+ $P(B|\cup A_n)= \frac{P(B\cap [\cup A_n])}{P(\cup A_n)}=\frac{P(B\cap A_i)+...+P(B\cap A_n)}{P(\cup A_n)}$\\
+$=\frac{P(A_i)P(B|A_i)+...+P(A_n)P(B|A_n)}{P(\cup A_n)}=\frac{P(A_i)P(C|A_i)+...+P(A_i)P(C|A_i)}{P(\cup A_n)}$\\
+$=\frac{P(C\cap A_i)+...+P(C\cap A_n)}{P(\cup A_n)}=\frac{C\cap [\cup A_n]}{P(\cup A_n)}=P(C|\cup A_n)$
+\item Si $A_1,A_2,...$ son disjuntos y $\cup A_n=\Omega$,entonces\\
+$P(B|C)=\displaystyle \sum_n P(A_n|C)P(B|A_n\cap C)$\\
+Probando\\
+$P(B|C)=\displaystyle \sum_n P(A_n|C)P(B|A_n\cap C)$\\
+$P(B|C)=\frac{P(B\cap C)}{P(C)}=\displaystyle \sum_n\frac{P(B\cap C\cap A_n)}{P(C)}$,pues\\
+$B\cap C= \Omega \cap (B\cap C)= [\cup A_n]\cap B\cap C \Rightarrow P(\cup A_n\cap B\cap C)=\displaystyle \sum_n P(A_n\cap B\cap C) $\\
+Luego\\
+$P(B|C)=\displaystyle \sum_n\frac{P(B\cap C\cap A_n)}{P(C)}\frac{P(C\cap A_n)}{P(C\cap A_n}=\displaystyle \sum_n \frac{P(C\cap A_n)}{P(C)}\frac{P(B\cap C\cap A_n)}{P(C\cap A_n)}$\\
+$=\displaystyle \sum_n P(A_n|C)P(B|C\cap A_n)$
+\end{enumerate}
+\item  Durante el mes de noviembre la probabilidad de lluvia es de  0,3. El Fluminense gana un partido en un día con lluvia con probabilidad  0,4; en un día sin lluvia con probabilidad 0,6. Si ganó un partido en noviembre, ¿ cuál es la probabilidad que haya llovido ese día?\\
+{\bf Solución:} \\
+$C$: lluvia en el mes de noviembre\\
+$F|C$: Fluminense gana un partido en un dia con lluvia\\
+$P(C)=0,3 ; P(F|C)=0,4$\\
+\\
+\\
+$P(C|F)=\frac{P(C)P(F|C)}{P(C)P(F|C)+P(C^c)P(F|C^c)}=\frac{(0,3)(0,4)}{(0,3)(0,4)+(0,7)(0,6)}=0,222$
+
+\item Pedro quiere enviar una carta a Marina, La probabilidad de que Pedro escriba la carta es 0,8. La probabilidad de que el correo no la pierda es 0,9. La probabilidad de que el cartero  la entregue es 0,9. Dado que Marina no recibió la carta, ¿cuál es la probabilidad de que Pedro no  haya escrito?\\
+$p:Pedro$\\
+$C:correo$\\
+$c:cartero$\\
+$M: Marina recibe la carta$\\
+$P(p)=0,8$\\
+$P(C)=0,9$\\
+$P(c)=0,9$\\
+$P(M)=(0,8)(0,9)(0,9)=0,648$\\
+$P(p\cap M)=P(p\cap|p\cap C\cap c)=0,648$
+$P(p^c|M^c)=\frac{P(p^c\cap M^c)}{M^c}=\frac{1-P(p\bigcup M)}{1-P(M)}$
+$=\frac{1-[P(p)+P(M)-P(p\cap M)]}{1-P(M)}= \frac{(1)-(0,8)-(0,648)+(0,648)}{1-0,648}=\frac{0,2}{0,352}=0,568$
+
+\item Sean $A-1,...,A_n$  eventos aleatorios independientes, con $p_k=P(A_n), k=1,...,n$. Obtenga la probabilidad de ocurrencia de los siguientes eventos en términos de las probabilidades $p_k$.\\
+(a) La ocurrencia de ninguno de los $A_k$\\
+ (b) La ocurrencia de por lo menos uno de los $A_k$\\
+ (c) La ocurrencia de exactamente uno de los $A_k$\\
+ (d) La ocurrencia de exactamente dos de los $A_k$\\
+ (e) La ocurrencia de todos los $A_k$\\
+ (f) La ocurrencia de, como máximo, $n-1$ de los $A_k$\\
+ {\bf Solución (a):} \\
+$P(A^c_1\cap A^c_2 \cap...\cap A^c_n)$
+$=P\left(\displaystyle\bigcap_{k=1}^n{A^c_k} \right) $
+$=\displaystyle\prod_{k=1}^{n}P\left(A^c_{k}\right)$\\
+$=\displaystyle\prod_{k=1}^{n}(1-P\left(A_{k}\right))$\\ 
+{\bf Solución (b):} \\
+$1-P\left(\displaystyle\bigcap_{k=1}^n{A^c_k} \right) $
+$=1-\displaystyle\prod_{k=1}^{n}(1-P\left(A_{k}\right))$\\
+
+
+{\bf Solución (d):} \\
+$\displaystyle\sum_{1\leq i \leq j \leq n}^{n}P_jP_i\displaystyle\prod_{k=1,k\neq j, k\neq i}^{n}(1-P\left(A_{k}\right)) $\\
+{\bf Solución (e):} \\
+$P(A_1\cap A_2 \cap...\cap A_n)$
+$=P\left(\displaystyle\bigcap_{k=1}^n{A_k} \right) $
+$=\displaystyle\prod_{k=1}^{n}P\left(A_{k}\right)$\\
+
+\end{enumerate}
+\end{document}
